@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-app lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/angular-datatables.css">    
+         <link href="css/toaster.css" rel="stylesheet" />
+        <style type="text/css">
+
+            @font-face {
+                font-family: Grobold;
+                src: url(fonts/GROBOLD.ttf);
+                font-family: SuperMario;
+                src: url(fonts/SuperMario.ttf);
+
+            }
+            body{
+                font-family: SuperMario, Grobold , Verdana;
+                letter-spacing: 0.12em;
+                /*                background-image: url(img/mario2.jpg);  
+                                background-repeat: no-repeat*/
+            }
+            table{
+                font-family: SuperMario, Grobold , Verdana;
+                font-size: 16px;
+                background-color: #ffe8a4;
+
+            }
+            table#characters-table th{
+                padding: 20px;
+                font-size: 24px;
+            }
+            thead{
+                background-color: #ed9c28; /*#925b35;*/
+
+            }
+            table#characters-table td, table#characters-table th{
+                vertical-align: inherit;
+            }
+            td img{
+                width: 100px;
+                height: 100px;
+                border-radius: 50px;
+                border: 1px solid #f0ad4e;
+            }
+            table#characters-table td:first-child{
+                text-align: center;
+                padding-left: 20px;
+            }
+            table#characters-table td:nth-child(3), table#characters-table th:nth-child(3),  table#characters-table td:nth-child(2),  table#characters-table th:nth-child(2){
+                padding-left: 50px;
+
+            }
+            ul>li, a{
+                cursor: pointer;
+            }
+            .btn{
+                border-radius: 0;
+            }
+            .btn-warning{
+                color: #333;
+            }
+            div.image {
+                text-align: center;
+            }
+            img#title-img{
+                height: auto;
+                width: 70%;
+                margin-bottom: 40px;
+            }
+            .navbar-default {
+                background-color:#ed9c28; /*rgba(126, 60, 15, 0.84);*/
+                border-color: #d58512;
+                min-height: 0;
+                border-radius: 0;
+            }
+            #title-characters, #create-characte{
+                margin-bottom: 20px;
+            }
+            #img-selected{
+                margin: 10px 0;
+                width: 50%;
+                text-align: center;
+                border: 1px solid #cccccc;
+                border-radius: 10px;
+            }
+            #img-selected img{
+                width:100px;
+            } 
+            select{
+                width: 100%;
+                height: 36px;
+            }
+
+        </style>
+        <title>Test Backend PHP</title>
+    </head>
+    <body>
+        <div class="navbar navbar-default" id="navbar">
+            <div class="container" id="navbar-container">
+                <div class="navbar-header">     
+                </div><!-- /.navbar-header -->
+                <div class="navbar-header pull-left" role="navigation">
+                    <a class="btn btn-default btn-lg" href="/">Home</a>
+                    <a class="btn btn-warning btn-lg" href="http://www.suppermariobroth.com">Blog</a>
+
+                </div>
+                <div class="navbar-header pull-right" role="navigation">
+                    <div>
+                        <a class="btn btn-default btn-lg" href="http://guiasupermarioworld.blogspot.com">Guia</a>
+                        <a class="btn btn-success btn-lg" href="http://www.minijuegos.com/juego/super-mario-kart">Jugar Online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+            <div class="container">
+                <br/>
+                <div class="image"><img id="title-img" src="img/mariokart.jpg" alt=""></div>
+                <div ng-view="" id="ng-view"></div>
+
+            </div>
+        </div>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.dataTables.min.js"></script>   
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-route.min.js"></script>
+        <script src="js/angular-datatables.min.js"></script>
+        <script src="js/angular-animate.min.js" ></script>
+        <script src="js/toaster.min.js"></script>
+        <script src="app/app.js"></script>
+       
+    </body>
+</html>

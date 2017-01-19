@@ -1,0 +1,71 @@
+﻿<style type="text/css">
+    .form-horizontal input.ng-invalid.ng-dirty {
+        border-color: #FA787E;
+    }
+
+    .form-horizontal input.ng-valid.ng-dirty {
+        border-color: #78FA89;
+    }
+</style>
+<div class="view">
+    <div class="container">
+        <div class="row">
+            <nav class= "navbar navbar-default" role= "navigation" >
+                <div class= "navbar-header" >
+                    <a class= "navbar-brand" href= "#/"><i class="glyphicon glyphicon-th-large"></i> Volver a lista de personajes </a>
+                </div>
+            </nav>
+            <header>
+                <h3>{{title}}</h3>
+            </header>
+            <div class="col-md-12">
+
+                <form role="form" name="myForm" class="form-horizontal">
+                    <div class="row">
+                        <div class= "form-group">
+                            <label class= "col-md-2"> Nombre </label>
+                            <div class="col-md-4">
+                                <input name="name" ng-model="character.nombre" type= "text" class= "form-control" placeholder="Nombre" required/>
+
+                            </div>
+                        </div>
+                        <div class= "form-group">
+                            <label class= "col-md-2">Descripcion</label>
+                            <div class="col-md-4">
+                                <input ng-model="character.descripcion" type= "text" class= "form-control" max-length="50" placeholder= "Descripcion"/>
+                            </div>
+                        </div>
+                       
+                         <div class= "form-group">
+                            <label class= "col-md-2">Imagen </label>
+                            <div class="col-md-4">
+                                <select ng-model="character.imagen">
+                               
+                                    <option ng-repeat="img in images">{{img}}</option>
+                                </select>
+                            </div>
+                        </div>  
+                        <div class= "form-group">
+                            <label class= "col-md-2">Imagen Seleccionada</label> 
+                            <div class="col-md-4">
+                                <!--<input ng-model="character.imagen" type= "text" class= "form-control" placeholder= ""/>-->
+                                <div id="img-selected" ng-model="images.select" >
+                                    <img ng-src="{{character.imagen}}">
+                                </div>    
+                            </div>
+                        </div>        
+     
+                        
+                        <div class= "form-group">
+                            <label class= "col-md-2"></label>
+                            <div class="col-md-4">
+                                <a href="#/" class="btn btn-default">Cancelar</a>
+                                <button ng-click="saveCharacter(character);" class="btn btn-warning">Crear</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div></div>
+    </div>
+</div>
